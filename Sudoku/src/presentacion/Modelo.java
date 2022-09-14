@@ -1,13 +1,22 @@
+
 package presentacion;
 
 public class Modelo {
+    
+    private Vista ventana;
+    
+    public void iniciar(){
+        getVentana().setSize(710, 750);
+        getVentana().setVisible(true);
+    }
 
-  public Modelo() {
-
-  }
-
-  public void iniciar() {
-    System.out.println("prueba");
-  }
-
+    public Vista getVentana() {
+        if(ventana == null){
+            ventana = new Vista(this);
+        }
+        return ventana;
+    }
+    
+    
+    
 }
