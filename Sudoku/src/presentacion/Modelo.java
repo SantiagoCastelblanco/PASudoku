@@ -6,7 +6,7 @@ public class Modelo {
     private Vista ventana;
     
     public void iniciar(){
-        getVentana().setSize(710, 750);
+        getVentana().setSize(710, 730);
         getVentana().setVisible(true);
     }
 
