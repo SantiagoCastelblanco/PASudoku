@@ -3,18 +3,23 @@ package presentacion;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 
 public class Vista extends javax.swing.JFrame {
     
     private final Modelo modelo;
-
+    private Controlador control;
 
     public Vista(Modelo aThis) {
         modelo = aThis;
         initComponents();
+        crearEtiquetasTablero();
         this.setLocationRelativeTo(null);
+        asignarEventos();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,88 +32,6 @@ public class Vista extends javax.swing.JFrame {
 
         jPanel12 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
-        jTextField43 = new javax.swing.JTextField();
-        jTextField44 = new javax.swing.JTextField();
-        jTextField45 = new javax.swing.JTextField();
-        jTextField46 = new javax.swing.JTextField();
-        jTextField47 = new javax.swing.JTextField();
-        jTextField48 = new javax.swing.JTextField();
-        jTextField49 = new javax.swing.JTextField();
-        jTextField50 = new javax.swing.JTextField();
-        jTextField51 = new javax.swing.JTextField();
-        jTextField52 = new javax.swing.JTextField();
-        jTextField53 = new javax.swing.JTextField();
-        jTextField54 = new javax.swing.JTextField();
-        jTextField55 = new javax.swing.JTextField();
-        jTextField56 = new javax.swing.JTextField();
-        jTextField57 = new javax.swing.JTextField();
-        jTextField58 = new javax.swing.JTextField();
-        jTextField59 = new javax.swing.JTextField();
-        jTextField60 = new javax.swing.JTextField();
-        jTextField61 = new javax.swing.JTextField();
-        jTextField62 = new javax.swing.JTextField();
-        jTextField63 = new javax.swing.JTextField();
-        jTextField64 = new javax.swing.JTextField();
-        jTextField65 = new javax.swing.JTextField();
-        jTextField66 = new javax.swing.JTextField();
-        jTextField67 = new javax.swing.JTextField();
-        jTextField68 = new javax.swing.JTextField();
-        jTextField69 = new javax.swing.JTextField();
-        jTextField70 = new javax.swing.JTextField();
-        jTextField71 = new javax.swing.JTextField();
-        jTextField72 = new javax.swing.JTextField();
-        jTextField73 = new javax.swing.JTextField();
-        jTextField74 = new javax.swing.JTextField();
-        jTextField75 = new javax.swing.JTextField();
-        jTextField76 = new javax.swing.JTextField();
-        jTextField77 = new javax.swing.JTextField();
-        jTextField78 = new javax.swing.JTextField();
-        jTextField79 = new javax.swing.JTextField();
-        jTextField80 = new javax.swing.JTextField();
-        jTextField81 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -121,9 +44,10 @@ public class Vista extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
+        btnNuevo = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        pnlCeldas = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,625 +59,6 @@ public class Vista extends javax.swing.JFrame {
         jLabel1.setText("SUDOKU");
         jPanel12.add(jLabel1);
         jLabel1.setBounds(280, 20, 200, 40);
-
-        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("1");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTextField1MousePressed(evt);
-            }
-        });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
-
-        jTextField2.setEditable(false);
-        jTextField2.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 50, 50));
-
-        jTextField3.setEditable(false);
-        jTextField3.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 50, 50));
-
-        jTextField4.setEditable(false);
-        jTextField4.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 50, 50));
-
-        jTextField5.setEditable(false);
-        jTextField5.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 50, 50));
-
-        jTextField6.setEditable(false);
-        jTextField6.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 50, 50));
-
-        jTextField7.setEditable(false);
-        jTextField7.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 50, 50));
-
-        jTextField8.setEditable(false);
-        jTextField8.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 50, 50));
-
-        jTextField9.setEditable(false);
-        jTextField9.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 50, 50));
-
-        jTextField10.setEditable(false);
-        jTextField10.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 50, 50));
-
-        jTextField11.setEditable(false);
-        jTextField11.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 50, 50));
-
-        jTextField12.setEditable(false);
-        jTextField12.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 50, 50));
-
-        jTextField13.setEditable(false);
-        jTextField13.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 50, 50));
-
-        jTextField14.setEditable(false);
-        jTextField14.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 50, 50));
-
-        jTextField15.setEditable(false);
-        jTextField15.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 50, 50));
-
-        jTextField16.setEditable(false);
-        jTextField16.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 50, 50));
-
-        jTextField17.setEditable(false);
-        jTextField17.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 50, 50));
-
-        jTextField18.setEditable(false);
-        jTextField18.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 50, 50));
-
-        jTextField19.setEditable(false);
-        jTextField19.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 50, 50));
-
-        jTextField20.setEditable(false);
-        jTextField20.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 50, 50));
-
-        jTextField21.setEditable(false);
-        jTextField21.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 50, 50));
-
-        jTextField22.setEditable(false);
-        jTextField22.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 50, 50));
-
-        jTextField23.setEditable(false);
-        jTextField23.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 50, 50));
-
-        jTextField24.setEditable(false);
-        jTextField24.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField24.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField24ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 50, 50));
-
-        jTextField25.setEditable(false);
-        jTextField25.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 50, 50));
-
-        jTextField26.setEditable(false);
-        jTextField26.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 50, 50));
-
-        jTextField27.setEditable(false);
-        jTextField27.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField27.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 50, 50));
-
-        jTextField28.setEditable(false);
-        jTextField28.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 50, 50));
-
-        jTextField29.setEditable(false);
-        jTextField29.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 50, 50));
-
-        jTextField30.setEditable(false);
-        jTextField30.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 50, 50));
-
-        jTextField31.setEditable(false);
-        jTextField31.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 50, 50));
-
-        jTextField32.setEditable(false);
-        jTextField32.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 50, 50));
-
-        jTextField33.setEditable(false);
-        jTextField33.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 50, 50));
-
-        jTextField34.setEditable(false);
-        jTextField34.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField34.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 50, 50));
-
-        jTextField35.setEditable(false);
-        jTextField35.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField35.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 50, 50));
-
-        jTextField36.setEditable(false);
-        jTextField36.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField36.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 50, 50));
-
-        jTextField37.setEditable(false);
-        jTextField37.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField37.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 50, 50));
-
-        jTextField38.setEditable(false);
-        jTextField38.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField38.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 50, 50));
-
-        jTextField39.setEditable(false);
-        jTextField39.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField39.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 50, 50));
-
-        jTextField40.setEditable(false);
-        jTextField40.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField40.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 50, 50));
-
-        jTextField41.setEditable(false);
-        jTextField41.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField41.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 50, 50));
-
-        jTextField42.setEditable(false);
-        jTextField42.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField42.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 50, 50));
-
-        jTextField43.setEditable(false);
-        jTextField43.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField43.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField43.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 50, 50));
-
-        jTextField44.setEditable(false);
-        jTextField44.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField44.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField44.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField44, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 50, 50));
-
-        jTextField45.setEditable(false);
-        jTextField45.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField45.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField45, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 50, 50));
-
-        jTextField46.setEditable(false);
-        jTextField46.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField46.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField46, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 50, 50));
-
-        jTextField47.setEditable(false);
-        jTextField47.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField47.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField47.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField47, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 50, 50));
-
-        jTextField48.setEditable(false);
-        jTextField48.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField48.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField48.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField48.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField48ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 50));
-
-        jTextField49.setEditable(false);
-        jTextField49.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField49.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField49.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField49, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 50, 50));
-
-        jTextField50.setEditable(false);
-        jTextField50.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField50.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField50.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField50, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 50, 50));
-
-        jTextField51.setEditable(false);
-        jTextField51.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField51.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField51.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField51, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 50, 50));
-
-        jTextField52.setEditable(false);
-        jTextField52.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField52.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField52.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField52, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 50, 50));
-
-        jTextField53.setEditable(false);
-        jTextField53.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField53.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField53.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField53, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 50, 50));
-
-        jTextField54.setEditable(false);
-        jTextField54.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField54.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField54.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField54, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 50, 50));
-
-        jTextField55.setEditable(false);
-        jTextField55.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField55.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField55.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField55.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField55, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 50, 50));
-
-        jTextField56.setEditable(false);
-        jTextField56.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField56.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField56.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField56, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 50, 50));
-
-        jTextField57.setEditable(false);
-        jTextField57.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField57.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField57.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField57, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 50, 50));
-
-        jTextField58.setEditable(false);
-        jTextField58.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField58.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField58.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField58.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField58, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 50, 50));
-
-        jTextField59.setEditable(false);
-        jTextField59.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField59.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField59.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField59, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 50, 50));
-
-        jTextField60.setEditable(false);
-        jTextField60.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField60.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField60.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField60, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 50, 50));
-
-        jTextField61.setEditable(false);
-        jTextField61.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField61.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField61.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField61, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 50, 50));
-
-        jTextField62.setEditable(false);
-        jTextField62.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField62.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField62.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField62.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField62.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField62ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField62, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 50, 50));
-
-        jTextField63.setEditable(false);
-        jTextField63.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField63.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField63.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField63.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField63, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 50, 50));
-
-        jTextField64.setEditable(false);
-        jTextField64.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField64.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField64.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField64.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField64, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 50, 50));
-
-        jTextField65.setEditable(false);
-        jTextField65.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField65.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField65.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField65.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField65, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 50, 50));
-
-        jTextField66.setEditable(false);
-        jTextField66.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField66.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField66.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField66.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField66, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 50, 50));
-
-        jTextField67.setEditable(false);
-        jTextField67.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField67.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField67.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField67.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField67, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 50, 50));
-
-        jTextField68.setEditable(false);
-        jTextField68.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField68.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField68.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField68.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField68, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 50, 50));
-
-        jTextField69.setEditable(false);
-        jTextField69.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField69.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField69.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 50, 50));
-
-        jTextField70.setEditable(false);
-        jTextField70.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField70.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField70.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField70, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 50, 50));
-
-        jTextField71.setEditable(false);
-        jTextField71.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField71.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField71.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField71.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField71, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 50, 50));
-
-        jTextField72.setEditable(false);
-        jTextField72.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField72.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField72.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField72.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField72, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 50, 50));
-
-        jTextField73.setEditable(false);
-        jTextField73.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField73.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField73.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField73.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField73, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 50, 50));
-
-        jTextField74.setEditable(false);
-        jTextField74.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField74.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField74.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField74.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField74, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 50, 50));
-
-        jTextField75.setEditable(false);
-        jTextField75.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField75.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField75.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jTextField75.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField75ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField75, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 50, 50));
-
-        jTextField76.setEditable(false);
-        jTextField76.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField76.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField76.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField76, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 50, 50));
-
-        jTextField77.setEditable(false);
-        jTextField77.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField77.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField77.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField77, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 50, 50));
-
-        jTextField78.setEditable(false);
-        jTextField78.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField78.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField78.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField78, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 50, 50));
-
-        jTextField79.setEditable(false);
-        jTextField79.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField79.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField79.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField79.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField79, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 50, 50));
-
-        jTextField80.setEditable(false);
-        jTextField80.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField80.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField80.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField80.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField80, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 50, 50));
-
-        jTextField81.setEditable(false);
-        jTextField81.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        jTextField81.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField81.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 255)));
-        jTextField81.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jTextField81, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 50, 50));
-
-        jPanel12.add(jPanel2);
-        jPanel2.setBounds(10, 80, 490, 490);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -860,8 +165,8 @@ public class Vista extends javax.swing.JFrame {
         jPanel12.add(jPanel1);
         jPanel1.setBounds(10, 570, 490, 110);
 
-        jButton11.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        jButton11.setText("Nuevo");
+        btnNuevo.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
+        btnNuevo.setText("Nuevo");
 
         jButton12.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jButton12.setText("Reiniciar");
@@ -876,7 +181,7 @@ public class Vista extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                     .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
                 .addContainerGap())
@@ -885,7 +190,7 @@ public class Vista extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -895,6 +200,10 @@ public class Vista extends javax.swing.JFrame {
 
         jPanel12.add(jPanel3);
         jPanel3.setBounds(510, 80, 180, 590);
+
+        pnlCeldas.setLayout(null);
+        jPanel12.add(pnlCeldas);
+        pnlCeldas.setBounds(10, 80, 490, 480);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -950,53 +259,15 @@ public class Vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24ActionPerformed
-
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField48ActionPerformed
-
-    private void jTextField62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField62ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField62ActionPerformed
-
-    private void jTextField75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField75ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField75ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MousePressed
-        jTextField1.setBorder(BorderFactory.createLineBorder(Color.WHITE,2));
-        jTextField1.setBackground(Color.BLUE);
-        jTextField1.setForeground(Color.WHITE);
-    }//GEN-LAST:event_jTextField1MousePressed
-
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
@@ -1010,88 +281,64 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
-    private javax.swing.JTextField jTextField43;
-    private javax.swing.JTextField jTextField44;
-    private javax.swing.JTextField jTextField45;
-    private javax.swing.JTextField jTextField46;
-    private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField50;
-    private javax.swing.JTextField jTextField51;
-    private javax.swing.JTextField jTextField52;
-    private javax.swing.JTextField jTextField53;
-    private javax.swing.JTextField jTextField54;
-    private javax.swing.JTextField jTextField55;
-    private javax.swing.JTextField jTextField56;
-    private javax.swing.JTextField jTextField57;
-    private javax.swing.JTextField jTextField58;
-    private javax.swing.JTextField jTextField59;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField60;
-    private javax.swing.JTextField jTextField61;
-    private javax.swing.JTextField jTextField62;
-    private javax.swing.JTextField jTextField63;
-    private javax.swing.JTextField jTextField64;
-    private javax.swing.JTextField jTextField65;
-    private javax.swing.JTextField jTextField66;
-    private javax.swing.JTextField jTextField67;
-    private javax.swing.JTextField jTextField68;
-    private javax.swing.JTextField jTextField69;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField70;
-    private javax.swing.JTextField jTextField71;
-    private javax.swing.JTextField jTextField72;
-    private javax.swing.JTextField jTextField73;
-    private javax.swing.JTextField jTextField74;
-    private javax.swing.JTextField jTextField75;
-    private javax.swing.JTextField jTextField76;
-    private javax.swing.JTextField jTextField77;
-    private javax.swing.JTextField jTextField78;
-    private javax.swing.JTextField jTextField79;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField80;
-    private javax.swing.JTextField jTextField81;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel pnlCeldas;
     // End of variables declaration//GEN-END:variables
+    private javax.swing.JLabel lblCeldas[][];
+    
+    private void asignarEventos() {
+        btnNuevo.addActionListener(getControl());
+    }
+
+    public Controlador getControl() {
+        if(control==null){
+            control = new Controlador(this);
+        }
+        return control;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    private void crearEtiquetasTablero() {
+         int x=0,y=0;
+         int n =0;
+         int dimension=40;
+         
+        lblCeldas = new JLabel[9][9];
+        for (int f = 0; f < 9; f++) {
+            y=0;
+            for (int c = 0; c < 9; c++) {
+                lblCeldas[f][c] = new JLabel();
+                lblCeldas[f][c].setBackground(new java.awt.Color(102, 255, 153));
+                lblCeldas[f][c].setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+                lblCeldas[f][c].setForeground(new java.awt.Color(255, 102, 204));
+                lblCeldas[f][c].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lblCeldas[f][c].setText(String.valueOf(n++));
+                lblCeldas[f][c].setToolTipText("");
+                lblCeldas[f][c].setOpaque(true);
+                lblCeldas[f][c].setBounds(x, y, dimension, dimension);
+                if(c%3==0&&c!=0){
+                    x+=60;
+                }
+                else{
+                    x+=40;
+                }
+                pnlCeldas.add(lblCeldas[f][c]);
+            }
+            if(f%3==0&&f!=0){
+                    y+=60;
+                }
+                else{
+                    y+=40;
+                }
+        }
+    }
+    
+    
 }
