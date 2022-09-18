@@ -318,7 +318,6 @@ public class Vista extends javax.swing.JFrame {
         for (int f = 0; f < 9; f++) {
             for (int c = 0; c < 9; c++) {
                 lblCeldas[f][c] = new JLabel();
-                //JLabel Celdas = new JLabel();
                 pnlCeldas.add(lblCeldas[f][c]);
                 lblCeldas[f][c].setBounds(x, y, dimension, dimension);
                 lblCeldas[f][c].setBackground(new java.awt.Color(242, 242, 242));
@@ -335,7 +334,6 @@ public class Vista extends javax.swing.JFrame {
                 if((c+1)%3 == 0){
                     x += 9;
                 }
-                //lblCeldas[f][c] = Celdas;
                 eventos(lblCeldas[f][c]);
             }
             x = 9;
