@@ -2,6 +2,10 @@
 package presentacion;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -11,6 +15,7 @@ public class Vista extends javax.swing.JFrame {
     
     private final Modelo modelo;
     private Controlador control;
+    private ArrayList<JLabel> listaLblAux;
 
     public Vista(Modelo aThis) {
         modelo = aThis;
@@ -60,7 +65,7 @@ public class Vista extends javax.swing.JFrame {
         jPanel12.add(jLabel1);
         jLabel1.setBounds(280, 20, 200, 40);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
         jButton1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton1.setText("...");
@@ -70,7 +75,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 50, -1));
+        jPanel1.add(jButton1);
+        jButton1.setBounds(70, 60, 50, 40);
 
         jButton2.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton2.setText("1");
@@ -80,7 +86,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, -1));
+        jPanel1.add(jButton2);
+        jButton2.setBounds(10, 10, 50, 40);
 
         jButton3.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton3.setText("2");
@@ -90,7 +97,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 50, -1));
+        jPanel1.add(jButton3);
+        jButton3.setBounds(70, 10, 50, 40);
 
         jButton4.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton4.setText("3");
@@ -100,7 +108,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 50, -1));
+        jPanel1.add(jButton4);
+        jButton4.setBounds(130, 10, 50, 40);
 
         jButton5.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton5.setText("4");
@@ -110,7 +119,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 50, -1));
+        jPanel1.add(jButton5);
+        jButton5.setBounds(190, 10, 50, 40);
 
         jButton6.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton6.setText("5");
@@ -120,7 +130,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 50, 40));
+        jPanel1.add(jButton6);
+        jButton6.setBounds(250, 10, 50, 40);
 
         jButton7.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton7.setText("6");
@@ -130,7 +141,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 50, -1));
+        jPanel1.add(jButton7);
+        jButton7.setBounds(310, 10, 50, 40);
 
         jButton8.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton8.setText("7");
@@ -140,7 +152,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 50, -1));
+        jPanel1.add(jButton8);
+        jButton8.setBounds(370, 10, 50, 40);
 
         jButton9.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton9.setText("8");
@@ -150,7 +163,8 @@ public class Vista extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 50, -1));
+        jPanel1.add(jButton9);
+        jButton9.setBounds(430, 10, 50, 40);
 
         jButton10.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jButton10.setText("9");
@@ -160,50 +174,36 @@ public class Vista extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 50, 40));
+        jPanel1.add(jButton10);
+        jButton10.setBounds(10, 60, 50, 40);
 
         jPanel12.add(jPanel1);
         jPanel1.setBounds(10, 570, 490, 110);
 
+        jPanel3.setLayout(null);
+
         btnNuevo.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         btnNuevo.setText("Nuevo");
+        jPanel3.add(btnNuevo);
+        btnNuevo.setBounds(6, 25, 168, 46);
 
         jButton12.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jButton12.setText("Reiniciar");
+        jPanel3.add(jButton12);
+        jButton12.setBounds(6, 89, 168, 46);
 
         jButton13.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jButton13.setText("Borrar");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(391, Short.MAX_VALUE))
-        );
+        jPanel3.add(jButton13);
+        jButton13.setBounds(6, 153, 168, 46);
 
         jPanel12.add(jPanel3);
         jPanel3.setBounds(510, 80, 180, 590);
 
+        pnlCeldas.setBackground(new java.awt.Color(102, 102, 255));
         pnlCeldas.setLayout(null);
         jPanel12.add(pnlCeldas);
-        pnlCeldas.setBounds(10, 80, 490, 480);
+        pnlCeldas.setBounds(10, 80, 490, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -306,39 +306,96 @@ public class Vista extends javax.swing.JFrame {
     }
 
     private void crearEtiquetasTablero() {
-         int x=0,y=0;
-         int n =0;
-         int dimension=40;
-         
         lblCeldas = new JLabel[9][9];
+        listaLblAux = new ArrayList<>();
+        
+         int x = 9;
+         int y = 9;
+         int n = 0;
+         int dimension=50;
+         
+        
         for (int f = 0; f < 9; f++) {
-            y=0;
             for (int c = 0; c < 9; c++) {
                 lblCeldas[f][c] = new JLabel();
-                lblCeldas[f][c].setBackground(new java.awt.Color(102, 255, 153));
+                //JLabel Celdas = new JLabel();
+                pnlCeldas.add(lblCeldas[f][c]);
+                lblCeldas[f][c].setBounds(x, y, dimension, dimension);
+                lblCeldas[f][c].setBackground(new java.awt.Color(242, 242, 242));
+                lblCeldas[f][c].setForeground(new java.awt.Color(0, 0, 0));
                 lblCeldas[f][c].setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-                lblCeldas[f][c].setForeground(new java.awt.Color(255, 102, 204));
-                lblCeldas[f][c].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                lblCeldas[f][c].setOpaque(true);
+                lblCeldas[f][c].setCursor(new Cursor(Cursor.HAND_CURSOR));
+                lblCeldas[f][c].setBorder(BorderFactory.createLineBorder(new Color(102,102,255), 1));
+                lblCeldas[f][c].setHorizontalAlignment(javax.swing.SwingConstants.CENTER);        
+                x += dimension;
+                
                 lblCeldas[f][c].setText(String.valueOf(n++));
                 lblCeldas[f][c].setToolTipText("");
-                lblCeldas[f][c].setOpaque(true);
-                lblCeldas[f][c].setBounds(x, y, dimension, dimension);
-                if(c%3==0&&c!=0){
-                    x+=60;
+                if((c+1)%3 == 0){
+                    x += 9;
                 }
-                else{
-                    x+=40;
-                }
-                pnlCeldas.add(lblCeldas[f][c]);
+                //lblCeldas[f][c] = Celdas;
+                eventos(lblCeldas[f][c]);
             }
-            if(f%3==0&&f!=0){
-                    y+=60;
-                }
-                else{
-                    y+=40;
-                }
+            x = 9;
+            y += dimension;
+            if((f+1)%3 == 0){
+                    y += 10;
+            }
         }
     }
     
+    public void eventos(JLabel Celdas){
+        MouseListener evento = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                pressed(Celdas);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+        };
+        Celdas.addMouseListener(evento);
+        
+    }
+    public void pressed(JLabel Celdas){
+        
+        for(JLabel jLbl : listaLblAux){
+            jLbl.setBackground(new java.awt.Color(242, 242, 242));
+            jLbl.setForeground(new java.awt.Color(0, 0, 0));
+            jLbl.setBorder(BorderFactory.createLineBorder(new Color(102,102,255), 1));
+        }
+        listaLblAux.clear();
+        
+        for (int f = 0; f < 9; f++) {
+            for (int c = 0; c < 9; c++) {
+                if(lblCeldas[f][c] == Celdas){
+                    listaLblAux.add(lblCeldas[f][c]);
+                    lblCeldas[f][c].setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
+                    lblCeldas[f][c].setBackground(Color.BLUE);
+                    lblCeldas[f][c].setForeground(Color.WHITE);
+                    return;
+                }
+            }
+        }
+    }
     
 }
