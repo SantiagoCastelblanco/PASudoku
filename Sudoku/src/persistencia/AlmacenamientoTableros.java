@@ -12,14 +12,14 @@ public class AlmacenamientoTableros{
   private int matrizLocal[][];
 
   public AlmacenamientoTableros(){
-    arreglo[81] = "";
-    matrizLocal[9][9]=0;
+    arreglo = new String[81];
+    matrizLocal= new int[9][9];
   }
 
   
-    public void LeerMatriz(String nombreArchivo){
+    public void leerMatriz(String nombreArchivo){
     try{
-        FileReader r = new FileReader(nombreArchivo);
+        FileReader r = new FileReader(getClass().getResource("/persistencia/Tablero1.txt").getFile());
         BufferedReader buffer = new BufferedReader(r);
         String temp = " ";
         while (temp!=null){
@@ -37,9 +37,15 @@ public class AlmacenamientoTableros{
 
   public void traducirMatriz(){
     int posicionArreglo=0;
-    for(int i=0;i<matrizLocal.length;i++){
-      for(int j=0;j<matrizLocal[i].length;j++){
-          matrizLocal[i][j]= Integer.parseInt(arreglo[posicionArreglo++]);
+    for(int c=0;c<matrizLocal.length;c++){
+      for(int f=0;f<matrizLocal[c].length;f++){
+          if(arreglo[posicionArreglo]!=null){
+              matrizLocal[f][c]= Integer.parseInt(arreglo[posicionArreglo]);
+          }
+          else{
+              matrizLocal[f][c]=0;
+          }
+          posicionArreglo++;
       }
     }
   }

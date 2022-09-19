@@ -19,7 +19,11 @@ public class Modelo {
     }
 
     public void crearNuevoJuego() {
-        
+        if(sudoku ==null){
+            sudoku = new Juego();
+        }
+        sudoku.nuevoJuego();
+        ventana.nuevoTableroJuego(sudoku.getTableroBase());
     }
 
     public Juego getSudoku() {
