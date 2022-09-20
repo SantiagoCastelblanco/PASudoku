@@ -165,12 +165,16 @@ public class Vista extends javax.swing.JFrame {
     } 
     private void creatBotonesNumericos() {
         btnNumeros = new JButton[10];
-        int x = 70;
+        int x = 100;
         int y = 5;
         int dimension = 50;
         int ubicacionArreglo = 0;
         for (int c = 0; c < 2; c++) {
             for (int f = 0; f < 5; f++) {
+                if(ubicacionArreglo==0){
+                    ubicacionArreglo++;
+                    continue;
+                }
                 btnNumeros[ubicacionArreglo] = new JButton();
                 panelBotonNum.add(btnNumeros[ubicacionArreglo]);
                 btnNumeros[ubicacionArreglo].setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
