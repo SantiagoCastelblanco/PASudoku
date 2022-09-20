@@ -16,7 +16,7 @@ public class AlmacenamientoTableros{
     matrizLocal= new int[9][9];
   }
 
-  
+    //Metodo dedicado a la lectura del archivo y guardado en la lista
     public void leerMatriz(){
     try{
         FileReader r = new FileReader(getClass().getResource("/persistencia/Tablero1.txt").getFile());
@@ -35,6 +35,7 @@ public class AlmacenamientoTableros{
     };   
     }
 
+  //Traduce el arreglo en una matriz 2x2
   public void traducirMatriz(){
     int posicionArreglo=0;
     for(int c=0;c<matrizLocal.length;c++){
