@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 
 public class Vista extends javax.swing.JFrame {
@@ -36,11 +37,10 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel12 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        panelJuego = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
         panelBotonNum = new javax.swing.JPanel();
-        btnNum1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        pnlBotonAccion = new javax.swing.JPanel();
         btnNuevo = new javax.swing.JButton();
         btnReiniciar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
@@ -48,73 +48,57 @@ public class Vista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel12.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel12.setPreferredSize(new java.awt.Dimension(700, 690));
-        jPanel12.setLayout(null);
+        panelJuego.setBackground(new java.awt.Color(204, 204, 255));
+        panelJuego.setPreferredSize(new java.awt.Dimension(700, 690));
+        panelJuego.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
-        jLabel1.setText("SUDOKU");
-        jPanel12.add(jLabel1);
-        jLabel1.setBounds(280, 20, 200, 40);
+        lblTitulo.setFont(new java.awt.Font("Century Gothic", 1, 48)); // NOI18N
+        lblTitulo.setText("SUDOKU");
+        panelJuego.add(lblTitulo);
+        lblTitulo.setBounds(280, 20, 200, 40);
 
         panelBotonNum.setLayout(null);
-
-        btnNum1.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        btnNum1.setText("1");
-        btnNum1.setPreferredSize(new java.awt.Dimension(40, 40));
-        btnNum1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNum1ActionPerformed(evt);
-            }
-        });
-        panelBotonNum.add(btnNum1);
-        btnNum1.setBounds(70, 10, 50, 40);
-
-        jPanel12.add(panelBotonNum);
+        panelJuego.add(panelBotonNum);
         panelBotonNum.setBounds(10, 570, 490, 110);
 
-        jPanel3.setLayout(null);
+        pnlBotonAccion.setLayout(null);
 
         btnNuevo.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         btnNuevo.setText("Nuevo");
-        jPanel3.add(btnNuevo);
+        pnlBotonAccion.add(btnNuevo);
         btnNuevo.setBounds(6, 25, 168, 46);
 
         btnReiniciar.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         btnReiniciar.setText("Reiniciar");
-        jPanel3.add(btnReiniciar);
+        pnlBotonAccion.add(btnReiniciar);
         btnReiniciar.setBounds(6, 89, 168, 46);
 
         btnBorrar.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         btnBorrar.setText("Borrar");
-        jPanel3.add(btnBorrar);
+        pnlBotonAccion.add(btnBorrar);
         btnBorrar.setBounds(6, 153, 168, 46);
 
-        jPanel12.add(jPanel3);
-        jPanel3.setBounds(510, 80, 180, 590);
+        panelJuego.add(pnlBotonAccion);
+        pnlBotonAccion.setBounds(510, 80, 180, 590);
 
         pnlCeldas.setBackground(new java.awt.Color(102, 102, 255));
         pnlCeldas.setLayout(null);
-        jPanel12.add(pnlCeldas);
+        panelJuego.add(pnlCeldas);
         pnlCeldas.setBounds(10, 80, 490, 490);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnNum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNum1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNum1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,12 +108,11 @@ public class Vista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton btnNum1;
     private javax.swing.JButton btnReiniciar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelBotonNum;
+    private javax.swing.JPanel panelJuego;
+    private javax.swing.JPanel pnlBotonAccion;
     private javax.swing.JPanel pnlCeldas;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JLabel lblCeldas[][];
@@ -137,21 +120,9 @@ public class Vista extends javax.swing.JFrame {
     
     private void asignarEventos() {
         btnNuevo.addActionListener(getControl());
-    }
-
-    public Controlador getControl() {
-        if(control==null){
-            control = new Controlador(this);
-        }
-        return control;
-    }
-
-    public JButton getBtnNuevo() {
-        return btnNuevo;
-    }
-
-    public Modelo getModelo() {
-        return modelo;
+        btnBorrar.addActionListener(getControl());
+        btnReiniciar.addActionListener(getControl());
+        
     }
 
     private void crearEtiquetasTablero() {
@@ -195,21 +166,22 @@ public class Vista extends javax.swing.JFrame {
     private void creatBotonesNumericos() {
         btnNumeros = new JButton[10];
         int x = 70;
-        int y = 10;
-        int dimension = 40;
+        int y = 5;
+        int dimension = 50;
         int ubicacionArreglo = 0;
         for (int c = 0; c < 2; c++) {
             for (int f = 0; f < 5; f++) {
                 btnNumeros[ubicacionArreglo] = new JButton();
-                btnNumeros[ubicacionArreglo].setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
                 panelBotonNum.add(btnNumeros[ubicacionArreglo]);
+                btnNumeros[ubicacionArreglo].setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
                 btnNumeros[ubicacionArreglo].setText(String.valueOf(ubicacionArreglo));
                 btnNumeros[ubicacionArreglo].setBounds(x,y,dimension,dimension);
-                x+=dimension;
+                x+=dimension+20;
+                asignarEventoBtnNumerico(btnNumeros[ubicacionArreglo]);
                 ubicacionArreglo++;
             }
             x=70;
-            y+=dimension;
+            y+=dimension+2;
         }
     }
     public void asignarEventoCelda(JLabel Celdas){
@@ -250,14 +222,58 @@ public class Vista extends javax.swing.JFrame {
                 }
                 else{
                     lblCeldas[f][c].setEnabled(true);
+                    lblCeldas[f][c].setText("");
                 }
             }
         }
     }
-    
-    public void dibujoTablero(){
-        
+
+    private void asignarEventoBtnNumerico(JButton btnNumero) {
+        btnNumero.addActionListener(getControl());
     }
 
+    public JButton[] getBtnNumeros() {
+        return btnNumeros;
+    }
+
+    void actualizarTablero(int[][] tablero) {
+        for (int c = 0; c < 9; c++) {
+            for (int f = 0; f < 9; f++) {
+                int celdaActual = tablero[f][c];
+                if(celdaActual!=0){
+                    lblCeldas[f][c].setText(String.valueOf(celdaActual));
+                }
+                else{
+                    lblCeldas[f][c].setText("");
+                }
+            }
+        }
+    }
+
+    void mostrarVictoria() {
+        JOptionPane.showMessageDialog(null, "Felicidades, ganaste");
+    }
+
+    public JButton getBtnBorrar() {
+        return btnBorrar;
+    }
+
+    public JButton getBtnReiniciar() {
+        return btnReiniciar;
+    }
     
+        public Controlador getControl() {
+        if (control == null) {
+            control = new Controlador(this);
+        }
+        return control;
+    }
+
+    public JButton getBtnNuevo() {
+        return btnNuevo;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
 }

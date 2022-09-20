@@ -25,6 +25,13 @@ public class Modelo {
         sudoku.nuevoJuego();
         ventana.nuevoTableroJuego(sudoku.getTableroBase());
     }
+    
+    void reiniciarJuegoActual() {
+        if (sudoku != null) {
+            sudoku.reiniciarJuego();
+            ventana.nuevoTableroJuego(sudoku.getTableroBase());
+        }
+    }
 
     public Juego getSudoku() {
         if(sudoku==null){
@@ -32,5 +39,14 @@ public class Modelo {
         }
         return sudoku;
     }
-    
+
+    void fichaModificada(int[] coordenadas, int numero) {
+        if(sudoku != null){
+            sudoku.fichaCambiada(coordenadas[0],coordenadas[1],numero);
+            ventana.actualizarTablero(sudoku.getTablero());
+            if(sudoku.tableroCorrecto()){
+                ventana.mostrarVictoria();
+            }
+        }
+    }
 }

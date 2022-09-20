@@ -30,7 +30,7 @@ public class Tablero{
           int Z= tableroJuego[i][j];
           
           //Comprueba si se mantiene un valor duplicado
-          if(unico[Z]){
+          if(unico[Z]||Z==0){
               return false;
           }
           unico[Z]=true;
@@ -46,7 +46,7 @@ public class Tablero{
             
             //Guarda el valor del tablero[j][i]
             int Z= tableroJuego[j][i];
-            if(unico[Z]){
+            if(unico[Z]||Z==0){
                 return false;
             }
             unico[Z]=true;
@@ -74,7 +74,7 @@ public class Tablero{
                 int Z = tableroJuego[X][Y];
                 //Revisa si hay duplicado
                 
-                if(unico[Z]){
+                if(unico[Z]||Z==0){
                     return false;
                 }
                 unico[Z]=true;
@@ -87,10 +87,6 @@ public class Tablero{
     return true;
   }
 
-  public int sudokuValido(){
-      return 0;
-  }
-
   public void setTableroJuego(int tableroEntrada[][]){
     this.tableroJuego = tableroEntrada;
   }
@@ -98,4 +94,8 @@ public class Tablero{
   public int[][] getTableroJuego(){
     return this.tableroJuego;
   }
+
+    void cambio(int x, int y, int numero) {
+        tableroJuego[x][y]=numero;
+    }
 }

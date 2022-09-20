@@ -15,7 +15,12 @@ public class Juego{
   }
 
     public void nuevoJuego() {
-        referenciaTableros.leerMatriz("Tablero1");
+        referenciaTableros.leerMatriz();
+        tableroBase.setTableroJuego(referenciaTableros.obtenerMatriz());
+        tablero.setTableroJuego(tableroBase.getTableroJuego());
+    }
+    
+    public void reiniciarJuego(){
         tableroBase.setTableroJuego(referenciaTableros.obtenerMatriz());
         tablero.setTableroJuego(tableroBase.getTableroJuego());
     }
@@ -23,4 +28,17 @@ public class Juego{
     public int[][] getTableroBase(){
         return tableroBase.getTableroJuego();
     }
+    
+    public int[][] getTablero(){
+        return tablero.getTableroJuego();
+    }
+    
+    public void fichaCambiada(int x, int y, int numero) {
+        tablero.cambio(x,y,numero);
+    }
+
+    public boolean tableroCorrecto() {
+        return tablero.estaCorrecto();
+    }
+    
 }

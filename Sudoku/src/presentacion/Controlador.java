@@ -29,7 +29,26 @@ public class Controlador implements ActionListener, MouseListener{
             boton=(JButton)e.getSource();
             if(boton.equals(ventana.getBtnNuevo())){
                 modelo.crearNuevoJuego();
-                
+                coordenadas=null;
+                return;
+            }
+            if(boton.equals(ventana.getBtnBorrar())){
+                if(coordenadas!=null){
+                    modelo.fichaModificada(coordenadas, 0);
+                }
+                return;
+            }
+            if (boton.equals(ventana.getBtnReiniciar())){
+                modelo.reiniciarJuegoActual();
+                return;
+            }
+            for (int i = 0; i < 10; i++) {
+                if(boton.equals(ventana.getBtnNumeros()[i])){
+                    if(coordenadas!=null){
+                        modelo.fichaModificada(coordenadas,i);
+                        return;
+                    }
+                }
             }
         }
     }

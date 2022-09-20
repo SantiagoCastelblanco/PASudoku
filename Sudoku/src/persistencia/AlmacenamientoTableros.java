@@ -17,7 +17,7 @@ public class AlmacenamientoTableros{
   }
 
   
-    public void leerMatriz(String nombreArchivo){
+    public void leerMatriz(){
     try{
         FileReader r = new FileReader(getClass().getResource("/persistencia/Tablero1.txt").getFile());
         BufferedReader buffer = new BufferedReader(r);
