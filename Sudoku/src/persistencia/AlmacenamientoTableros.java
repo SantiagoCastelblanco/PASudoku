@@ -4,13 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class AlmacenamientoTableros{
 
   private String arreglo[];
   private int matrizLocal[][];
-  private static String TABLEROS_PATH = "/persistencia/tableros";
+  private static String TABLEROS_PATH = "/persistencia/tableros/";
 
   public AlmacenamientoTableros(){
     arreglo = new String[81];
@@ -25,25 +26,31 @@ public class AlmacenamientoTableros{
     String array[]=new File(getClass().getResource(TABLEROS_PATH).getPath()).list();
     cantidadTableros = new File(getClass().getResource(TABLEROS_PATH).getPath()).list().length;
     int intRandom = ThreadLocalRandom.current().nextInt(1,cantidadTableros+1);
-    str = "/"+array[intRandom-1];
+    str = array[intRandom-1];
     return str;
   }
 
     //Metodo dedicado a la lectura del archivo y guardado en la lista
     public void leerMatriz(){
     try{
-        FileReader r = new FileReader(getClass().getResource(TABLEROS_PATH+obtenerRutaArchvio()).getFile());
+        String path = URLDecoder.decode(getClass().getResource(TABLEROS_PATH+obtenerRutaArchvio()).getFile(),"UTF-8");
+        FileReader r = new FileReader(path);
         BufferedReader buffer = new BufferedReader(r);
         String temp = " ";
         while (temp!=null){
             temp = buffer.readLine();
-            arreglo = temp.split(" ");
+            if(temp!=null){
+                arreglo = temp.split(" ");
+                break;
+            }
         }if (temp == null){
+            
         System.out.println("Fallo");
         }
   
                 
     }catch(Exception e){
+        System.out.println(e);
                 System.out.println("No se encontro el archivo");
     };   
     }
