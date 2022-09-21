@@ -1,6 +1,7 @@
 
 package presentacion;
 
+// Librerias que se utilizaran para la interfaz
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.MouseEvent;
@@ -18,12 +19,13 @@ public class Vista extends javax.swing.JFrame {
     private Controlador control;
     private ArrayList<JLabel> listaLblAux;
 
+    // Se declara las componentes del jframe
     public Vista(Modelo aThis) {
         modelo = aThis;
         initComponents();
-        crearEtiquetasTablero();
+        crearEtiquetasTablero();// Metodos para crear el tablero del sudoku
         creatBotonesNumericos();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);// Hace que la ventana salgo en medio de la pantalla
         asignarEventos();
     }
     
@@ -125,6 +127,7 @@ public class Vista extends javax.swing.JFrame {
         
     }
 
+    //Metodo para crear las etiquetas del tablero(casillas 9x9)
     private void crearEtiquetasTablero() {
         lblCeldas = new JLabel[9][9];
         listaLblAux = new ArrayList<>();
@@ -191,7 +194,8 @@ public class Vista extends javax.swing.JFrame {
     public void asignarEventoCelda(JLabel Celdas){
         Celdas.addMouseListener(getControl());
     }
-    
+
+    // Metodo para cambiar de color la casilla que se selecione
     public int[] pressed(JLabel Celdas){
         int retorno[] = new int[2];
         for(JLabel jLbl : listaLblAux){

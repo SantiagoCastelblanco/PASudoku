@@ -1,25 +1,38 @@
-
-
 package persistencia;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class AlmacenamientoTableros{
 
   private String arreglo[];
   private int matrizLocal[][];
+  private static String TABLEROS_PATH = "/persistencia/tableros";
 
   public AlmacenamientoTableros(){
     arreglo = new String[81];
     matrizLocal= new int[9][9];
+    
+  }
+  //Metodo dedicado a obtener el string de los archivos presentes
+  public String obtenerRutaArchvio(){
+    String str ="";
+    int cantidadTableros;
+    
+    String array[]=new File(getClass().getResource(TABLEROS_PATH).getPath()).list();
+    cantidadTableros = new File(getClass().getResource(TABLEROS_PATH).getPath()).list().length;
+    int intRandom = ThreadLocalRandom.current().nextInt(1,cantidadTableros+1);
+    str = "/"+array[intRandom-1];
+    return str;
   }
 
     //Metodo dedicado a la lectura del archivo y guardado en la lista
     public void leerMatriz(){
     try{
-        FileReader r = new FileReader(getClass().getResource("/persistencia/Tablero1.txt").getFile());
+        FileReader r = new FileReader(getClass().getResource(TABLEROS_PATH+obtenerRutaArchvio()).getFile());
         BufferedReader buffer = new BufferedReader(r);
         String temp = " ";
         while (temp!=null){
